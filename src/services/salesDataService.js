@@ -46,15 +46,15 @@ export const fetchData = async (startDate, endDate) => {
     const [totalSalesRes, trendingProductsRes, categorySalesRes, productsRes] =
       await Promise.all([
         fetch(
-          `http://localhost:4000/total-sales?startDate=${startDate}&endDate=${endDate}`
+          `https://sales-tool-backend-1.onrender.com/total-sales?startDate=${startDate}&endDate=${endDate}`
         ),
         fetch(
-          `http://localhost:4000/trending-products?startDate=${startDate}&endDate=${endDate}`
+          `https://sales-tool-backend-1.onrender.com/trending-products?startDate=${startDate}&endDate=${endDate}`
         ),
         fetch(
-          `http://localhost:4000/category-sales?startDate=${startDate}&endDate=${endDate}`
+          `https://sales-tool-backend-1.onrender.com/category-sales?startDate=${startDate}&endDate=${endDate}`
         ),
-        fetch("http://localhost:4000/products-with-sales"),
+        fetch("https://sales-tool-backend-1.onrender.com/products-with-sales"),
       ]);
 
     totalSales.value = (await totalSalesRes.json()).totalSales;
