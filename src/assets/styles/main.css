@@ -20,9 +20,9 @@ body {
 
 /* Header */
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;  /* Smaller font size for mobile */
   color: #1a5276;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: center;
   font-weight: 700;
 }
@@ -30,8 +30,8 @@ h1 {
 /* Filters Section */
 .filters {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;  /* Start with column layout for mobile */
+  gap: 15px;
   margin-bottom: 25px;
   background-color: #ffffff;
   padding: 20px 25px;
@@ -40,9 +40,8 @@ h1 {
 }
 
 .filters label {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #5d6d7e;
-  margin-right: 10px;
   font-weight: 500;
 }
 
@@ -91,14 +90,14 @@ h1 {
 }
 
 .stats h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;  /* Adjust font size for mobile */
   color: #1a5276;
   margin-bottom: 15px;
   font-weight: 600;
 }
 
 .stats p {
-  font-size: 1.2rem;
+  font-size: 1rem;  /* Adjust font size for mobile */
   color: #34495e;
 }
 
@@ -118,7 +117,7 @@ h1 {
 
 .tables th,
 .tables td {
-  padding: 16px;
+  padding: 12px;  /* Adjust padding for mobile */
   text-align: left;
   border-bottom: 1px solid #dfe6e9;
 }
@@ -143,7 +142,7 @@ h1 {
   margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;  /* Smaller gap for mobile */
   justify-content: center;
 }
 
@@ -154,20 +153,37 @@ h1 {
   background-color: #ffffff;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Mobile-First: Styles for Mobile Devices */
+@media (min-width: 768px) {
+  /* Header */
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Filters Section */
   .filters {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .filters select,
-  .filters input[type="date"] {
-    width: 100%;
+  /* Stats Section */
+  .stats h2 {
+    font-size: 1.8rem;
   }
 
+  .stats p {
+    font-size: 1.2rem;
+  }
+
+  /* Tables */
+  .tables th,
+  .tables td {
+    padding: 16px;
+  }
+
+  /* Charts */
   .charts {
-    flex-direction: column;
+    gap: 20px;
   }
 }
 

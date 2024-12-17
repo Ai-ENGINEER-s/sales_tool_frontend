@@ -147,7 +147,7 @@ export default {
   if (categorySales.value.length > 0) {
     
     new Chart(document.getElementById('category-sales-chart'), {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: categorySales.value.map((sale) => sale.Category),
         datasets: [
@@ -158,6 +158,7 @@ export default {
         ],
       },
       options: {
+        responsive:true , 
         plugins: {
           legend: {
             display: true,
@@ -218,6 +219,8 @@ export default {
     });
   }
 };
+
+
 
     onMounted(async () => {
       const { startDate: initStartDate, endDate: initEndDate } = calculateDates(selectedPeriod.value);
